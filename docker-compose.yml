@@ -1,0 +1,23 @@
+version: '1'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    volumes:
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - database:/var/lib/mysql
+    ports:
+      - "4306:3306"
+  web:
+    build: .
+    volumes:
+      - .:/home/portfolio_sites/
+      - gems:/usr/local/bundle
+    ports:
+      - 8080:3000
+    tty: true
+volumes:
+  database:
+  gems:
