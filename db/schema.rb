@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_04_075624) do
+ActiveRecord::Schema.define(version: 2022_04_04_080144) do
+
+  create_table "to_dos", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.string "detail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
