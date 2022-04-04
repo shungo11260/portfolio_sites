@@ -6,4 +6,4 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   apt install -y nodejs && \
   gem install rails -v 6.1
 
-WORKDIR /home/portfolio_sites/
+WORKDIR /home/portfolio_sites/backend/

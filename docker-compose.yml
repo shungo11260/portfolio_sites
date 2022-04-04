@@ -1,4 +1,5 @@
 version: '1'
+name: portfolio_sites-backend
 services:
   db:
     image: mysql:5.7
