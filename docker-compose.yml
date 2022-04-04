@@ -10,7 +10,7 @@ services:
       - database:/var/lib/mysql
     ports:
       - "4306:3306"
-  web:
+  backend:
     build: .
     volumes:
       - .:/home/portfolio_sites/
