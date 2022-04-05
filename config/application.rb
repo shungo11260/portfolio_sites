@@ -18,5 +18,7 @@ module PortfolioSites
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.permitted_origin = ENV.fetch('PERMITTED_ORIGIN', 'http://localhost:8081')
   end
 end
