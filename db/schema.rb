@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_04_080144) do
+ActiveRecord::Schema.define(version: 2022_04_06_043149) do
 
-  create_table "to_dos", charset: "utf8mb4", force: :cascade do |t|
+  create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "detail"
     t.datetime "created_at", precision: 6, null: false
