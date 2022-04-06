@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_06_043149) do
+ActiveRecord::Schema.define(version: 2022_04_06_052720) do
+
+  create_table "lists", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.time "est_man_hours"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
