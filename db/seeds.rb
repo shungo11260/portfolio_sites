@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-list = List.create([{ title: 'Default list' }])
+board = Board.create([{ title: 'Default board' }])
+list = List.create([{ title: 'Default list', board_id: 1 }])
