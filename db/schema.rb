@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_06_052720) do
+ActiveRecord::Schema.define(version: 2022_04_06_062129) do
 
   create_table "lists", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2022_04_06_052720) do
     t.date "start_date"
     t.date "end_date"
     t.time "est_man_hours"
+    t.bigint "list_id", default: 2, null: false
+    t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -40,4 +42,5 @@ ActiveRecord::Schema.define(version: 2022_04_06_052720) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tasks", "lists"
 end
