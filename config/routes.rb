@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :tasks
   resources :lists
+  resources :boards
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
     get '/tasks/:id', to: 'tasks#show', defaults: { format: :json }
     get '/lists', to: 'lists#index', defaults: { format: :json }
     get '/lists/:id', to: 'lists#show', defaults: { format: :json }
+    get '/boards', to: 'boards#index', defaults: { format: :json }
+    get '/boards/:id', to: 'boards#show', defaults: { format: :json }
   end
 end
