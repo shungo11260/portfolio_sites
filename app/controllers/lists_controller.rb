@@ -24,15 +24,17 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
 
-    respond_to do |format|
-      if @list.save
-        format.html { redirect_to list_url(@list), notice: "List was successfully created." }
-        format.json { render :show, status: :created, location: @list }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @list.errors, status: :unprocessable_entity }
-      end
-    end
+    @list.save
+
+    # respond_to do |format|
+    #   if @list.save
+    #     format.html { redirect_to list_url(@list), notice: "List was successfully created." }
+    #     format.json { render :show, status: :created, location: @list }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @list.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /lists/1 or /lists/1.json
