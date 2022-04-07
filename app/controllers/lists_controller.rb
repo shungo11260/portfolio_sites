@@ -68,6 +68,6 @@ class ListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:title)
+      params.require(:list).permit(:title, :board_id)
     end
 end
