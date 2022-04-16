@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope '/api' do
     get '/tasks', to: 'tasks#index', defaults: { format: :json }
     get '/tasks/:id', to: 'tasks#show', defaults: { format: :json }
+    post '/tasks', to: 'tasks#create'
     get '/lists', to: 'lists#index', defaults: { format: :json }
     get '/lists/:id', to: 'lists#show', defaults: { format: :json }
     post '/lists', to: 'lists#create'
