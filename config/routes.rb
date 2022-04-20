@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  resources :to_dos
+  resources :tasks
+  resources :lists
+  resources :boards
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+
   scope '/api' do
-    get '/to_dos', to: 'to_dos#index', defaults: { format: :json }
-    get '/to_dos/:id', to: 'to_dos#show', defaults: { format: :json }
+    get '/tasks', to: 'tasks#index', defaults: { format: :json }
+    get '/tasks/:id', to: 'tasks#show', defaults: { format: :json }
+    post '/tasks', to: 'tasks#create'
+    get '/lists', to: 'lists#index', defaults: { format: :json }
+    get '/lists/:id', to: 'lists#show', defaults: { format: :json }
+    post '/lists', to: 'lists#create'
+    get '/boards', to: 'boards#index', defaults: { format: :json }
+    get '/boards/:id', to: 'boards#show', defaults: { format: :json }
   end
 end
